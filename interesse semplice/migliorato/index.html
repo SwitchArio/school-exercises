@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Interesse Semplice</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <label for="decimale">N. decimale</label>
+    <input type="text" name="decimale" id="decimale">
+
+    <label for="inputBase" id="al">N. in base </label>
+    <input type="text" name="inputBase" id="inputBase" onchange="getBase(this.value)">
+
+    <label for="risultato" id="al2">Risultato in base </label>
+    <input type="text" name="risultato" id="risultato">
+
+    <button id="btn" onclick="trasforma()">Converti in base </button>
+
+
+</body>
+
+</html>
