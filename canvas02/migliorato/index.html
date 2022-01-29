@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <title>Canvas</title>
+</head>
+
+<body onload="draw()">
+    <canvas height="300" width="300" id="myCanvas">canvas non supportato dal browser </canvas>
+    <br>
+
+    <input type="number" id="quantity" min="1" max="70" value="1" onchange="draw()" >
+
+    <label for="red">rosso</label>
+    <input type="number" id="red" min="0" max="255" value="255" onchange="draw()">
+    <label for="green">verde</label>
+    <input type="number" id="green" min="0" max="255" value="0" onchange="draw()">
+    <label for="blue">blu</label>
+    <input type="number" id="blue" min="0" max="255" value="0" onchange="draw()">
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
