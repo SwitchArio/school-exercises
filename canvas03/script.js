@@ -17,6 +17,16 @@ function triangleType(ab, ac, cb){
     return "scaleno"
 }
 
+function isRettangolo(ab, ac, cb){
+    if(ac == Math.round(Math.sqrt(ab * ab + cb * cb)))
+        return " e rettangolo"
+    if(ab == Math.round(Math.sqrt(ac * ac + cb * cb)))
+        return " e rettangolo"
+    if(cb == Math.round(Math.sqrt(ac * ac + ab * ab)))
+        return " e rettangolo"
+    return " ma non rettangolo"
+}
+
 function draw() {
     let a = getPointValues(1);
     let b = getPointValues(2);
@@ -26,7 +36,7 @@ function draw() {
     let ac = Math.round(Math.sqrt(Math.pow(a[0] - c[0], 2) + Math.pow(a[1] - c[1], 2)))
     let cb = Math.round(Math.sqrt(Math.pow(c[0] - b[0], 2) + Math.pow(c[1] - b[1], 2)))
 
-    alert(triangleType(ab, ac, cb))
+    document.getElementById("paragraph").textContent = triangleType(ab, ac, cb) + isRettangolo(ab, ac, cb)
 
     ctx.beginPath()
     ctx.lineTo(a[0], a[1])
