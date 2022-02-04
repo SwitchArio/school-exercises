@@ -1,4 +1,5 @@
-ctx = document.getElementById("myCanvas").getContext("2d");
+canvas = document.getElementById("myCanvas");
+ctx = canvas.getContext("2d");
 
 function getPointValues(n){
     x = document.getElementById(n + "x").value;
@@ -38,6 +39,7 @@ function draw() {
 
     document.getElementById("paragraph").textContent = triangleType(ab, ac, cb) + isRettangolo(ab, ac, cb)
 
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.beginPath()
     ctx.lineTo(a[0], a[1])
     ctx.lineTo(b[0], b[1])
