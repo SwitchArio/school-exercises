@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <title>Canvas || Triangoli Rettangoli</title>
 </head>
-<body>
+<body onload="draw()">
     <canvas height="500px" width="500px" id="myCanvas">canvas non supportato dal browser </canvas>
     <br>
 
     <label>Punto A</label>
-    <label for="1x">x</label><input type="number" id="1x" min="0" max="500" value="0">
-    <label for="1y">y</label><input type="number" id="1y" min="0" max="500" value="0"><br>
+    <label for="1x">x</label><input type="number" id="1x" min="0" max="500" value="0" onchange="draw()">
+    <label for="1y">y</label><input type="number" id="1y" min="0" max="500" value="0" onchange="draw()"><br>
 
     <label>Punto B</label>
-    <label for="2x">x</label><input type="number" id="2x" min="0" max="500" value="60">
-    <label for="2y">y</label><input type="number" id="2y" min="0" max="500" value="0"><br>
+    <label for="2x">x</label><input type="number" id="2x" min="0" max="500" value="60" onchange="draw()">
+    <label for="2y">y</label><input type="number" id="2y" min="0" max="500" value="0" onchange="draw()"><br>
 
     <label>Punto C</label>
-    <label for="3x">x</label><input type="number" id="3x" min="0" max="500" value="0">
-    <label for="3y">y</label><input type="number" id="3y" min="0" max="500" value="30"><br>
+    <label for="3x">x</label><input type="number" id="3x" min="0" max="500" value="0" onchange="draw()">
+    <label for="3y">y</label><input type="number" id="3y" min="0" max="500" value="30" onchange="draw()"><br>
 
     <button onclick="draw()">disegna</button>
+    <p id="paragraph"></p>
 
     <script src="script.js"></script>
 </body>
