@@ -26,8 +26,8 @@ function prendiDato(id){
 
 function drawParabola(){
 	assi()
-    a = prendiDato("a")
-    b = prendiDato("b")
+    	a = prendiDato("a")
+    	b = prendiDato("b")
 	c = prendiDato("c")
 
 	
