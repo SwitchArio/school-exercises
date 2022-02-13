@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas || PreVerifica</title>
+</head>
+<body>	
+	pulsazione<input type="text" id="pulsazione" value="0.1" min="0" onchange="drawSinusoide()">
+	ampiezza<input type="number" id="ampiezza" min="0" max="1200" value="100" onchange="drawSinusoide()">
+	sfasamento (gradi)<input type="number" id="sfasamento" min="0" max="360" value="0" onchange="drawSinusoide()"><br>
+	<p id="frequenza">frequenza: ----</p>
+	<button onclick="drawSinusoide()">disegna</button><br>
+	<canvas width="1200" height="1200" id="myCanvas">Il browser non supporta il canvas</canvas>
+	<script src="script.js"></script>
+</body>
+</html>
