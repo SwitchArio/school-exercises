@@ -3,16 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <title>Pagina Base</title>
-		
+
         <script type="text/javascript">
-			
 			
 			function puntoMedio(x, y, x1, y1){
 				xM = (x + x1)/2;
 				yM = (y + y1)/2;
 				return [xM, yM];
 			}
-			
+
 			 function fnctDisegna(){
 			  mioCanvas = document.getElementById("CanvasCompito");
 			  context = mioCanvas.getContext("2d");
@@ -30,49 +29,39 @@
 			  context.lineTo(x-v, y+lato);
 			  context.closePath();
 			  context.stroke();
-			  
+
 			  context.beginPath();
 			  centro = puntoMedio(x, y, x+lato-v, y+v+lato);
 			  raggio = Math.sqrt(Math.pow(x - (x+lato), 2) + Math.pow(y - (y+v), 2))/2;
 			  context.arc(centro[0], centro[1], raggio, 0, 2*Math.PI);
 			  context.stroke();
-			 }			
-				
-				
+			 }
+
 			 function pulisciGrafico(){
 				mioCanvas = document.getElementById("CanvasCompito");
 				context= mioCanvas.getContext("2d");
 				context.clearRect(0, 0, context.canvas.width, context.canvas.height);
 			}
-			
+
         </script>
     </head>
     <body>
- <form>
-    
-
-
-<table border="1">
-	<tr>
-	<td>&nbsp;&nbsp; x1 <input type="number" id="x1" value="100">  </td>  
-	<td>&nbsp;&nbsp; y1 <input type="number" id="y1" value="100">  </td>  
-	<td>&nbsp;&nbsp; L <input type="number" id="lato" value="100">  </td>  
-	<td>&nbsp;&nbsp; Angolo Gradi <input type="number" id="angolo" min="0" max="90" value="30">  </td>  
-	</tr>
-</table>
-
-<br><br>			
-
-            <input type="button" id="btnDisegna" value="Disegna" onclick="fnctDisegna()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            
-			<input type="button" id="btnPulisci" value="Pulisci" onclick="pulisciGrafico()"><br>
-
-
-
-<br><br>			
-			
-            <p><canvas id="CanvasCompito" width="1200" height="1200">
-                Attenzione: Il tuo browser non supporta il tag canvas.
-            </canvas></p>
+ 	<form>
+		<table border="1">
+			<tr>
+			<td>&nbsp;&nbsp; x1 <input type="number" id="x1" value="100"></td>  
+			<td>&nbsp;&nbsp; y1 <input type="number" id="y1" value="100"></td>  
+			<td>&nbsp;&nbsp; L <input type="number" id="lato" value="100"></td>  
+			<td>&nbsp;&nbsp; Angolo Gradi <input type="number" id="angolo" min="0" max="90" value="30"></td>
+			</tr>
+		</table>
+		<br>
+		
+		<input type="button" id="btnDisegna" value="Disegna" onclick="fnctDisegna()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="button" id="btnPulisci" value="Pulisci" onclick="pulisciGrafico()">
+		<br>
+	 
+		<canvas id="CanvasCompito" width="1200" height="1200">Attenzione: Il tuo browser non supporta il tag canvas.</canvas>
         </form>
     </body>
 </html>
