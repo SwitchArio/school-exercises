@@ -27,7 +27,7 @@ function disegnaCirconferenza(){
 	disegnaPunto(b[0], b[1])
 	disegnaPunto(c[0], c[1])
 	
-		if((a[1] - b[1])/(a[0] - b[0]) == (c[1] - b[1])/(c[0] - b[0]))
+	if((a[1] - b[1])/(a[0] - b[0]) == (c[1] - b[1])/(c[0] - b[0]))
 		return alert("i punti devono esser non allineati")
 	
 	abM = puntoMedio(a[0], a[1], b[0], b[1])
