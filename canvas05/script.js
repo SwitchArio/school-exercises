@@ -34,14 +34,8 @@ function drawSinusoide(){
 	
     	ctx.moveTo(offset(0), offset(0))
 	ctx.beginPath()
-	for(x=0; x<canvas.width/2; x++) 
+	for(x=-canvas.width/2; x<canvas.width/2; x++) 
 		ctx.lineTo(offset(x), offset(sinusoide(x, ampiezza, pulsazione, sfasamento)))
-		
-	ctx.stroke()
-	ctx.beginPath()
-	for(x=0; x>-canvas.width/2; x--) 
-		ctx.lineTo(offset(x), offset(sinusoide(x, ampiezza, pulsazione, sfasamento)))
-		
 	ctx.stroke()
 }
 
