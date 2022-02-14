@@ -13,7 +13,7 @@ function assi(){
 }
 
 function offset(value){
-    return canvas.width/2+value
+    	return canvas.width/2+value
 }
 
 function sinusoide(x, A, omega, phi){
@@ -26,13 +26,13 @@ function prendiDato(id){
 
 function drawSinusoide(){
 	assi()
-    pulsazione = prendiDato("pulsazione")
-    ampiezza = prendiDato("ampiezza")
+    	pulsazione = prendiDato("pulsazione")
+    	ampiezza = prendiDato("ampiezza")
 	sfasamento = prendiDato("sfasamento")/180*Math.PI
 	document.getElementById("frequenza").textContent = "frequenza: " + Math.round(1000*pulsazione/(2*Math.PI))/1000
 
 	
-    ctx.moveTo(offset(0), offset(0))
+    	ctx.moveTo(offset(0), offset(0))
 	ctx.beginPath()
 	for(x=0; x<canvas.width/2; x++) 
 		ctx.lineTo(offset(x), offset(sinusoide(x, ampiezza, pulsazione, sfasamento)))
