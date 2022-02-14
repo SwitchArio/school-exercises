@@ -17,7 +17,7 @@ function drawGraphic() {
         ctx.beginPath();
         ctx.arc(150, 150, 50, v[i], v[i + 1]);
         ctx.lineTo(150, 150);
-        ctx.fillStyle = document.getElementById("col" + (i + 1)).value();
+        ctx.fillStyle = document.getElementById("col" + (i + 1)).value;
         ctx.fill();
         ctx.closePath();
     }
