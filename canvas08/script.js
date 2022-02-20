@@ -7,12 +7,12 @@ function prendiPunto(id){
 	return [x, y]
 }
 
-puntoMedio(x, y, x2, y2) {
+function puntoMedio(x, y, x2, y2) {
 	var xM = (x+x2)/2;
 	var yM = (y+y2)/2
 	return [xM, yM];
 }
-offset(value) { 
+function offset(value) { 
 	return value+canvas.width/2;
 }
 
