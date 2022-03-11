@@ -1,13 +1,17 @@
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
 int main()
 {
     const int MAX = 50;
-    int A[MAX][MAX], B[MAX][MAX], C[MAX][MAX], r1, c1, r2, c2;
+    int A[MAX][MAX] { {5, -2, 4}, {0, -1, 8},  {3, 6, -7} },
+    B[MAX][MAX] {{-1, 12},  {4, -5}, {10, 3} },
+    C[MAX][MAX],
+    r1=3, c1=3, r2=3, c2=2, tmp = 0;
 
-    cout << "PRIMA MATRICE\n\n";
+    /*cout << "PRIMA MATRICE\n\n";
     do{
         cout << "quante righe? (max 50) ";
         cin >> r1;
@@ -44,12 +48,20 @@ int main()
             cout << "inserisci il valore nella cella " << r+1 << ":" << c+1 << "\n>";
             cin >> B[r][c];
         }
+*/
+    // terza matrice c1xr2
 
-    // terza matrice r1xc2
+    for(int r=0;r<r1; r++)
+        for(int c=0; c<c2; c++)
+        {
+            tmp=0;
+            for(int i=0; i<c1; i++)
+                tmp += A[r][i]*B[i][c];
 
-    for(int c = 0; i < c2; c++)
-        for(int r = 0; i < r1, r++){
-            C[c][r] = 
+            C[r][c] = tmp;
+            cout << setw(3) << tmp;
         }
+
     return 0;
 }
+
