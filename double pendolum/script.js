@@ -11,7 +11,7 @@ async function draw() {
     let lunghezza = document.getElementById("len").value
     let velocitaAngolo, angolo, accelerazione, forza, x1, y1;
     let velocitaAngolo2, angolo2, accelerazione2, forza2, x2, y2;
-    let massa, accelerazioneGrav;
+    let massa, accelerazioneGrav, angoloBeta, angoloBeta2;
 
     angolo = ANGOLO_INIZIALE
     angolo2 = ANGOLO_INIZIALE
@@ -22,6 +22,8 @@ async function draw() {
     play = !play
     while(play) {
         ctx.clearRect(0, 0, canvas.width, canvas.height)
+        angoloBeta = ( 90 - angolo ) / 180 * Math.PI
+        angoloBeta2 = ( 90 - angolo2 ) / 180 * Math.PI
 
         x1 = lunghezza * Math.sin(angolo/180*Math.PI)
         y1 = lunghezza * Math.cos(angolo/180*Math.PI)
@@ -30,7 +32,7 @@ async function draw() {
         y2 = lunghezza * (Math.cos(angolo/180*Math.PI) + 0.5 * Math.cos(angolo2/180*Math.PI))
 
         forza = -Math.sin(angolo/180*Math.PI) * massa * accelerazioneGrav
-        forza2 = -( Math.sin(angolo/180*Math.PI) + Math.sin(angolo2/180*Math.PI) ) * massa * accelerazioneGrav
+        forza2 = - massa * accelerazioneGrav* Math.sqrt(Math.pow(Math.sin(angoloBeta) + Math.sin(angoloBeta2), 2) + Math.pow(Math.cos(angoloBeta)+Math.cos(angoloBeta2), 2))
 
         accelerazione = forza
         velocitaAngolo += accelerazione
