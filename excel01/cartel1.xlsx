@@ -1,0 +1,24 @@
+Private Sub Domanda_Click()
+    Dim risposta
+    
+    risposta = InputBox("inserisci la risposta", "esempio input", "scrivi qui")
+    MsgBox risposta
+    
+    Domanda.Caption = "sei uscito dalla procedura"
+    
+    
+    
+    If risposta = "okay" Then
+        MsgBox "hai detto okay"
+    
+    ElseIf risposta = "ok" Then
+        MsgBox "hai detto ok"
+    
+    ElseIf risposta = "scrivi qui" Then
+        MsgBox "non hai scritto nulla"
+    
+    Else
+        MsgBox "hai scritto altro"
+    
+    End If
+End Sub
