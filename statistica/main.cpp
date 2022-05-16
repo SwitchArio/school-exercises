@@ -4,8 +4,6 @@
 
 using namespace std;
 
-// n. min, n. max, quanti numeri, quanti pari, quanti dispari, media aritmetica e varianza
-
 int main()
 {
     ifstream miofile;
@@ -39,7 +37,7 @@ int main()
     miofile.close();
 
     media = (float)somma / nTot;
-
+	
     for(int i = 0; i < nTot; i++)
         sommaVarianza += (numeri[i]-media)*(numeri[i]-media);
     varianza = (float)sommaVarianza / nTot;
