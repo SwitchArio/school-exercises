@@ -11,9 +11,9 @@ int main()
     char rigaletta[10]="         ";
     miofile.open("numeriInteri.txt");
 
-    int nMin = 0, nMax = 0, nTot = 0, nPari = 0, nDispari = 0, somma = 0, numeri[800], sommaVarianza = 0, temp, n1 = 0, n2 = 0, n3 = 0;
+    int nMin = 0, nMax = 0, nTot = 0, nPari = 0, nDispari = 0, somma = 0, numeri[800], n1, n2, n3;
     bool flag = true;
-    float media, varianza, mediana, moda;
+    float media, varianza, mediana;
 
     while( miofile.getline(rigaletta,10) ){
         n = atoi(rigaletta);
@@ -36,12 +36,17 @@ int main()
     }
     miofile.close();
 
+    // media aritmetica
     media = (float)somma / nTot;
-	
+
+    // varianza
+    int sommaVarianza = 0;
     for(int i = 0; i < nTot; i++)
         sommaVarianza += (numeri[i]-media)*(numeri[i]-media);
     varianza = (float)sommaVarianza / nTot;
 
+    // bubble sort
+    int temp;
     for(int i = 0; i < nTot; i++)
 		for(int j = i+1; j < nTot; j++)
 			if(numeri[i] > numeri[j])
@@ -50,10 +55,25 @@ int main()
 				numeri[i] = numeri[j];
 				numeri[j] = temp;
 			}
+
+    // mediana
     if(nTot%2 == 0)
         mediana = (float)(numeri[nTot/2]+numeri[nTot/2+1])/2;
-    else 
+    else
         mediana = numeri[(nTot+1)/2];
+
+    // moda
+    int frequenza = 0, frequenzaMax = 0, moda;
+    for(int i = 0; i < nTot; i++){
+        for(int j = 0; j < nTot; j++)
+            if(numeri[i]==numeri[j])
+                frequenza++;
+        if(frequenza > frequenzaMax){
+            frequenzaMax = frequenza;
+            moda = numeri[i];
+        }
+        frequenza = 0;
+    }
 
 
     cout << "DATI:\nNumeri Totali: " << nTot
@@ -64,10 +84,10 @@ int main()
     << "\nMax: " << nMax
     << "\nMedia: " << media
     << "\nVarianza: " << varianza
+    << "\nModa: " << moda
     << "\nMediana: " << mediana;
-    if(!flag)
-        cout << "\nPrima serie di numeri in ordine crescente: " << n3 << " " << n2 << " " << n1;
-
+    if(flag) return 0;
+    cout << "\nPrima serie di numeri in ordine crescente: " << n3 << " " << n2 << " " << n1;
 
     return 0;
 }
