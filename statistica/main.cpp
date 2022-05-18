@@ -87,7 +87,7 @@ int main()
     << "\nModa: " << moda
     << "\nMediana: " << mediana;
     if(flag) return 0;
-    cout << "\nPrima serie di numeri in ordine crescente: " << n3 << " " << n2 << " " << n1;
+    cout << "\nPrima serie di numeri in ordine crescente: " << n1 << " " << n2 << " " << n3;
 
     return 0;
 }
