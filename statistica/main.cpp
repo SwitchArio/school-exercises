@@ -48,13 +48,13 @@ int main()
     // bubble sort
     int temp;
     for(int i = 0; i < nTot; i++)
-		for(int j = i+1; j < nTot; j++)
-			if(numeri[i] > numeri[j])
-			{
-				temp = numeri[i];
-				numeri[i] = numeri[j];
-				numeri[j] = temp;
-			}
+	for(int j = i+1; j < nTot; j++)
+	    if(numeri[i] > numeri[j])
+	    {
+		temp = numeri[i];
+		numeri[i] = numeri[j];
+		numeri[j] = temp;
+	    }
 
     // mediana
     if(nTot%2 == 0)
