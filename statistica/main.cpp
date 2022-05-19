@@ -40,7 +40,7 @@ int main()
     media = (float)somma / nTot;
 
     // varianza
-    int sommaVarianza = 0;
+    long long unsigned int sommaVarianza = 0;
     for(int i = 0; i < nTot; i++)
         sommaVarianza += (numeri[i]-media)*(numeri[i]-media);
     varianza = (float)sommaVarianza / nTot;
